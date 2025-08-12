@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Khurram Hashmi</title>
+    <meta name="description" content="About Khurram Hashmi: Hospitality leader, consultant, and trainer. Learn about his journey and expertise." />
+    <meta name="keywords" content="Khurram Hashmi, about, hospitality, consultant, trainer, Pakistan, Middle East" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        });
+    </script>
+    <!-- Header End -->
+
+    <main class="container">
+      <section class="section-animate" style="margin: 2.5rem 0">
+        <h1 style="color: var(--secondary)">From Skardu to Success: A Hospitality Journey</h1>
+        <p>
+          Raised in the breathtaking valleys of Skardu, Khurram Hashmi's journey is a testament to passion, perseverance, and a deep-rooted love for hospitality. From humble beginnings to leading some of the region's most prestigious resorts and clubs, Khurram's story is one of vision, hard work, and a commitment to excellence. His philosophy is simple: hospitality is about people, not just places. As a father, mentor, and celebrator of life, he brings a personal touch to every project and relationship.
+        </p>
+      </section>
+      <section class="section-animate" style="margin: 2.5rem 0">
+        <h2 style="color: var(--primary)">Professional Expertise</h2>
+        <ul>
+          <li><strong>Leadership Philosophy:</strong> Customer-first culture, operational excellence</li>
+          <li><strong>Unique Value:</strong> Blend of strategic vision and grassroots training</li>
+          <li><strong>Industry Recognition:</strong> Trusted by clients, admired by colleagues</li>
+        </ul>
+      </section>
+      <section class="section-animate" style="margin: 2.5rem 0">
+        <h2 style="color: var(--primary)">Personal Touch</h2>
+        <ul>
+          <li>Family man and mentor</li>
+          <li>Believes in celebrating people as much as profits</li>
+          <li>Thoughtful approach to business and relationships</li>
+        </ul>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+        });
+    </script>
+  </body>
+</html>

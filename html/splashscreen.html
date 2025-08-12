@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Hospitality Splash</title>
+    <link rel="stylesheet" href="../css/splashscreen.css" />
+  </head>
+  <body>
+    <div class="splash">
+      <div class="logo">
+        Hospitality<span style="color: var(--accent)">+</span>
+      </div>
+      <div class="icons">
+        <img
+          src="https://img.icons8.com/ios-filled/50/bfa14a/hotel-information.png"
+          alt="Hotel"
+        />
+        <img
+          src="https://img.icons8.com/ios-filled/50/bfa14a/restaurant.png"
+          alt="Restaurant"
+        />
+        <img
+          src="https://img.icons8.com/ios-filled/50/bfa14a/bell.png"
+          alt="Service"
+        />
+      </div>
+      <div class="tagline">Redefining Hospitality...</div>
+    </div>
+    <script>
+      setTimeout(() => {
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1000);
+      }, 4000); // Transition after 4s
+    </script>
+  </body>
+</html>

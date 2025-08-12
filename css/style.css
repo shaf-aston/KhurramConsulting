@@ -1,0 +1,548 @@
+/* =====================
+   Root & Base Styles
+   ===================== */
+
+/* KC - Khurram Consultants */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #1a2233;
+  --secondary: #bfa14a;
+  --accent: #fff;
+  --gray: #f5f5f5;
+  --text: #222;
+  --header-font: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --body-font: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --transition-speed: 0.3s;
+  --ease-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --hover-scale: 1.02;
+  --shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  background: var(--gray);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =====================
+   Header Styles
+   ===================== */
+.main-header {
+  background: var(--primary);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--header-font);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.nav-menu a:hover {
+  color: var(--secondary);
+}
+
+/* =====================
+   Hero Section
+   ===================== */
+
+.hero {
+  background: var(--primary);
+  color: var(--accent);
+  padding-bottom: 2rem; /*do not change this*/
+}
+
+.hero-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem; 
+}
+
+.hero-text {
+  flex: 1 1 50%;
+  padding-right: 1.5rem;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-family: var(--header-font);
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.hero-text h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-family: var(--header-font);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition-speed) var(--ease-function), color var(--transition-speed) var(--ease-function);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--secondary);
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background: #d4b85a;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+/* FIXED LOGO AND PORTRAIT CONTAINER */
+.hero-image {
+  flex: 0 1 45%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.logo-portrait-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  flex-wrap: nowrap;
+}
+
+.logo-container img,
+.portrait-container img {
+  width: clamp(160px, 16vw, 240px);
+  height: clamp(240px, 24vw, 340px);
+  object-fit: cover;
+  border-radius: 12px;
+  transition: all 0.4s var(--ease-function);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.logo-container img {
+  object-fit: contain;
+}
+
+.portrait-container img {
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.portrait-container img:hover,
+.logo-container img:hover {
+  transform: scale(1.05);
+}
+
+/* =====================
+   Quick Stats Section
+   ===================== */
+
+.quick-stats {
+  background: var(--accent);
+  padding: 2rem 0;
+}
+
+.stats-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat {
+  flex: 1 1 180px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+  color: var(--secondary);
+  font-weight: bold;
+  white-space: nowrap; /* avoid awkward wraps like Cross-Regional */
+  line-height: 1.1;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  text-wrap: balance;
+}
+
+/* =====================
+   Experience Page Media
+   ===================== */
+.cothm-image-container {
+  display: grid;
+  justify-items: center;
+  margin: 1.5rem 0;
+}
+
+.cothm-image {
+  width: min(100%, 720px);
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  transition: transform var(--transition-speed) var(--ease-function);
+}
+
+.cothm-image:hover {
+  transform: scale(1.02);
+}
+
+.cothm-image-container .image-caption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--primary);
+  opacity: 0.85;
+  text-align: center;
+}
+
+/* =====================
+   Services Overview Section
+   ===================== */
+
+.services-overview {
+  background: var(--gray);
+  padding: 2.5rem 0 2rem 0;
+}
+
+.services-overview h2 {
+  text-align: center;
+  color: var(--primary);
+  font-family: var(--header-font);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-wrap: balance;
+}
+
+.services-columns {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.service-col {
+  background: var(--accent);
+  border-radius: 8px;
+  position: relative;
+  overflow: visible; /* allow floating icon badge to sit outside card */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 2.5rem 1rem 1.5rem;
+  flex: 1 1 260px;
+  min-width: 220px;
+  max-width: 340px;
+  transition: transform 0.22s cubic-bezier(.4, 2, .6, 1),
+    box-shadow 0.22s cubic-bezier(.4, 2, .6, 1),
+    border-color 0.22s cubic-bezier(.4, 2, .6, 1);
+  border: 2px solid #00000010;
+}
+
+.service-col:hover {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 8px 32px rgba(191, 161, 74, 0.18), 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-color: var(--secondary);
+  cursor: pointer;
+}
+/* Subtle sheen sweep inspired by card example (kept neutral to preserve colors) */
+.service-col::before {
+  content: "";
+  position: absolute;
+  top: -140%;
+  left: -50%;
+  width: 80%;
+  height: 300%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  transform: rotate(35deg) translateY(-20%);
+  transition: transform 0.6s var(--ease-function);
+  pointer-events: none;
+  filter: blur(2px);
+  z-index: 0; /* keep sheen beneath icon */
+}
+
+.service-col:hover::before {
+  transform: rotate(35deg) translateY(20%);
+}
+
+/* Optional top icon cap for service cards */
+.service-icon {
+  position: absolute;
+  top: -24px; /* float above card */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  background: var(--primary);
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* above sheen and card */
+  pointer-events: none;
+}
+
+.service-icon ion-icon {
+  color: var(--accent);
+  font-size: 22px;
+  --ionicon-stroke-width: 20px;
+}
+
+.service-col h3 {
+  color: var(--secondary);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: var(--header-font);
+  line-height: 1.3;
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+
+.service-col ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.service-col li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+/* =====================
+   Footer Styles
+   ===================== */
+.main-footer {
+  background: var(--primary);
+  color: var(--accent);
+  padding: 2rem 0 1rem 0;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.footer-links a:hover {
+  color: var(--secondary);
+}
+
+.footer-tagline {
+  font-style: italic;
+  color: var(--secondary);
+}
+
+.footer-contact {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+.footer-copy {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* =====================
+   Responsive Styles
+   ===================== */
+
+@media (max-width: 900px) {
+
+  .hero-flex,
+  .stats-flex,
+  .services-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-image {
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 0;
+  }
+
+  .hero-text {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .footer-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .logo-portrait-container {
+    margin-top: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-text h2,
+  .hero-text p {
+    text-align: center;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-portrait-container {
+    gap: 1rem;
+  }
+
+  .logo-container img,
+  .portrait-container img {
+    width: clamp(130px, 40vw, 180px);
+    height: clamp(180px, 50vw, 240px);
+  }
+
+  .logo-portrait-container {
+    gap: 1.5rem;
+  }
+}
+
+/* =====================
+   Animations
+   ===================== */
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-animate {
+  opacity: 0;
+  animation: fadeSlideUp var(--transition-speed) var(--ease-function) forwards;
+}
+
+/* Respect reduced motion preferences (global) */
+@media (prefers-reduced-motion: reduce) {
+  .section-animate {
+    animation: none !important;
+  }
+  .btn,
+  .nav-menu a,
+  .service-col,
+  .service-col::before {
+    transition: none !important;
+  }
+}

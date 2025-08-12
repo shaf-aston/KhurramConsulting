@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Khurram Hashmi</title>
+    <meta
+      name="description"
+      content="Contact Khurram Hashmi: Get in touch for hospitality consulting, training, and business services."
+    />
+    <meta
+      name="keywords"
+      content="Khurram Hashmi, contact, hospitality, consulting, training"
+    />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async
+    ></script>
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="../email.js"></script>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    </script>
+    <main class="container">
+      <h1>Contact</h1>
+      <section class="section-animate">
+        <h2>Contact Information</h2>
+        <ul>
+          <li style="margin-bottom: 1rem">
+            <strong>Phone:</strong> +92-300-8489686
+          </li>
+          <li style="margin-bottom: 1rem">
+            <strong>Email:</strong>
+            <a
+              href="mailto:khurram.hashmi@gmail.com"
+              style="color: var(--secondary); text-decoration: underline"
+              >khurram.hashmi@gmail.com</a
+            >
+          </li>
+          <li style="margin-bottom: 1rem">
+            <strong>LinkedIn:</strong>
+            <a
+              href="https://www.linkedin.com/in/khurram-hashmi-38a145a"
+              target="_blank"
+              style="color: var(--secondary); text-decoration: underline"
+              >linkedin.com/in/khurram-hashmi-38a145a</a
+            >
+          </li>
+          <li>
+            <strong>Location:</strong> Lahore, Pakistan (with Middle East
+            project availability)
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Consultation Booking</h2>
+        <div
+          id="form-message"
+          style="
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            display: none;
+          "
+        ></div>
+        <form
+          id="consultation-form"
+          style="
+            background: var(--gray);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <label
+            for="name"
+            style="display: block; margin-bottom: 0.5rem; font-weight: bold"
+            >Name:</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            style="
+              width: 100%;
+              margin-bottom: 1rem;
+              padding: 0.5rem;
+              border: 1px solid var(--secondary);
+              border-radius: 4px;
+              box-sizing: border-box;
+            "
+          />
+
+          <label
+            for="email"
+            style="display: block; margin-bottom: 0.5rem; font-weight: bold"
+            >Email:</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            inputmode="email"
+            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+            title="Please enter a valid email address (e.g., name@example.com)."
+            required
+            style="
+              width: 100%;
+              margin-bottom: 1rem;
+              padding: 0.5rem;
+              border: 1px solid var(--secondary);
+              border-radius: 4px;
+              box-sizing: border-box;
+            "
+          />
+
+          <label
+            for="message"
+            style="display: block; margin-bottom: 0.5rem; font-weight: bold"
+            >Project Requirements:</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            minlength="50"
+            required
+            style="
+              width: 100%;
+              margin-bottom: 1rem;
+              padding: 0.5rem;
+              border: 1px solid var(--secondary);
+              border-radius: 4px;
+              box-sizing: border-box;
+              resize: vertical;
+            "
+          ></textarea>
+
+          <button
+            type="submit"
+            id="submit-btn"
+            class="btn btn-primary button"
+            style="
+              display: block;
+              width: 100%;
+              padding: 0.75rem;
+              background: var(--secondary);
+              color: white;
+              border: none;
+              border-radius: 4px;
+              font-size: 1rem;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+            "
+          >
+            Request Consultation
+          </button>
+        </form>
+      </section>
+      <section>
+        <h2>Book a Consultation below</h2>
+        <div style="margin: 2rem 0">
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/manmandem5/30min"
+            style="min-width: 320px; height: 630px"
+          ></div>
+          <script
+            type="text/javascript"
+            src="https://assets.calendly.com/assets/external/widget.js"
+            async
+          ></script>
+        </div>
+      </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+    <script>
+      document
+        .getElementById("consultation-form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const formMessage = document.getElementById("form-message");
+          formMessage.style.display = "none";
+
+          const form = document.getElementById("consultation-form");
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const messageEl = document.getElementById("message");
+          const message = messageEl.value;
+
+          // Custom validation: at least 50 characters in project requirements
+          messageEl.setCustomValidity("");
+          const charCount = message.trim().length;
+          if (charCount < 50) {
+            messageEl.setCustomValidity(
+              "Please enter at least 50 characters in the project requirements."
+            );
+          }
+
+          // Trigger built-in HTML5 validation (including email format)
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          // Show loading state
+          const submitBtn = document.getElementById("submit-btn");
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = "Sending...";
+          submitBtn.disabled = true;
+
+          try {
+            // Use EmailJS to send the email
+            await sendEmail(name, email, message);
+
+            // Show success message
+            formMessage.style.display = "block";
+            formMessage.style.backgroundColor = "#4CAF50";
+            formMessage.style.color = "white";
+            formMessage.style.border = "1px solid #45a049";
+            formMessage.textContent = "Thank you! Your consultation request has been sent successfully. I'll get back to you within 24 hours.";
+
+            // Clear the form on success
+            document.getElementById("consultation-form").reset();
+          } catch (error) {
+            console.error('Email sending failed:', error);
+            formMessage.style.display = "block";
+            formMessage.style.backgroundColor = "#f44336";
+            formMessage.style.color = "white";
+            formMessage.style.border = "1px solid #d32f2f";
+            formMessage.textContent = "Sorry, there was an error sending your message. Please try again or contact me directly at khurram.hashmi@gmail.com";
+          } finally {
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          }
+        });
+    </script>
+  </body>
+</html>

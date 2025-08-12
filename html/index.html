@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khurram Hashmi | Hospitality Consultant</title>
+    <meta
+      name="description"
+      content="Khurram Hashmi: Hospitality leader, consultant, and trainer. Resort & club development, training, and business consulting."
+    />
+    <meta
+      name="keywords"
+      content="Khurram Hashmi, hospitality, consultant, resort, club, training, business, Pakistan, Middle East"
+    />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero section-animate">
+      <div class="container hero-flex">
+        <div class="hero-text">
+          <h1>Crafting Experiences. <br />Leading Hospitality.</h1>
+          <h2>
+            Hospitality Leader | Resort & Club Consultant | Trainer | Strategic
+            Business Developer
+          </h2>
+          <p>
+            Over 20 years of transforming hospitality experiences across
+            Pakistan and the Middle East
+          </p>
+          <div class="cta-buttons">
+            <a href="services.html" class="btn btn-primary">View Services</a>
+            <a href="contact.html" class="btn btn-secondary"
+              >Schedule Consultation</a
+            >
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="logo-portrait-container">
+            <div class="logo-container">
+              <img
+                src="../images/Logo.png"
+                alt="Khurram Hashmi Logo"
+                class="hero-logo img-animate"
+              />
+            </div>
+            <div class="portrait-container">
+              <img
+                src="../images/Portrait.jpeg"
+                alt="Khurram Hashmi - Hospitality Consultant"
+                class="hero-portrait img-animate"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="quick-stats section-animate">
+      <div class="container stats-flex">
+        <div class="stat">
+          <span class="stat-number">20+</span>
+          <span class="stat-label">Years of Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">Multiple</span>
+          <span class="stat-label">Resort Launches</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Training Programs Delivered</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">Cross&#8209;Regional</span>
+          <span class="stat-label">Expertise</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview section-animate">
+      <div class="container">
+        <h2>Services Overview</h2>
+        <div class="services-columns">
+          <div class="service-col">
+            <div class="service-icon"><ion-icon name="globe-outline"></ion-icon></div>
+            <h3>Resort & Hotel Development</h3>
+            <ul>
+              <li>Pre-opening consultation</li>
+              <li>Operational setup</li>
+              <li>Strategic planning</li>
+            </ul>
+          </div>
+          <div class="service-col">
+            <div class="service-icon"><ion-icon name="diamond-outline"></ion-icon></div>
+            <h3>Club Management & Revitalization</h3>
+            <ul>
+              <li>Facility upgrades</li>
+              <li>Member experience enhancement</li>
+              <li>Event management</li>
+            </ul>
+          </div>
+          <div class="service-col">
+            <div class="service-icon"><ion-icon name="rocket-outline"></ion-icon></div>
+            <h3>Hospitality Training & Education</h3>
+            <ul>
+              <li>COTHM programs</li>
+              <li>Soft skills training</li>
+              <li>Leadership development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <script>
+      // Fade-in and slide-up for .section-animate (on scroll)
+      const animatedSections = document.querySelectorAll(".section-animate");
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      animatedSections.forEach((section) => {
+        section.style.opacity = "0";
+        observer.observe(section);
+      });
+
+      // Fade-in and slide-in for hero images at page load
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".img-animate").forEach((img, i) => {
+          img.style.opacity = "0";
+          img.style.transform = "translateY(40px) scale(0.95)";
+          setTimeout(() => {
+            img.style.transition =
+              "opacity 1s cubic-bezier(0.23,1,0.32,1), transform 1s cubic-bezier(0.23,1,0.32,1)";
+            img.style.opacity = "1";
+            img.style.transform = "translateY(0) scale(1)";
+          }, 300 + i * 200); // staggered
+        });
+      });
+
+      // Select the Services Overview section
+      const servicesSection = document.querySelector(
+        ".services-overview.section-animate"
+      );
+      // Create an Intersection Observer instance
+      const servicesObserver = new IntersectionObserver(
+        (entries, observer) => {
+          // Loop through each observed entry
+          entries.forEach((entry) => {
+            // If the element is in the viewport
+            if (entry.isIntersecting) {
+              // Add a class to start the animation (or remove opacity: 0)
+              entry.target.style.opacity = "1";
+              // Optionally, you can remove the observer after animation triggers
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.15, // Trigger when 15% of the element is visible
+        }
+      );
+      // Set initial opacity to 0 (in case not set in CSS)
+      if (servicesSection) {
+        servicesSection.style.opacity = "0";
+        servicesObserver.observe(servicesSection);
+      }
+    </script>
+
+    <!-- Ionicons for service icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

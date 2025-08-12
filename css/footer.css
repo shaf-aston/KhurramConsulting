@@ -1,0 +1,77 @@
+/* =====================
+   Footer Section
+   ===================== */
+
+.main-footer {
+  background: var(--primary);
+  color: var(--accent);
+  padding: 2rem 0 0.5rem 0;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.footer-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.footer-links a:hover {
+  color: var(--secondary);
+}
+
+.footer-tagline {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.footer-contact {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-contact span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.footer-linkedin {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-linkedin:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  color: #bbbbbba6;
+  margin-bottom: 0.5rem;
+}
+
+.main-footer li {
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
+/* Keep footer links accent colored even if a global .underline-link exists */
+.main-footer .underline-link {
+  color: var(--accent);
+}

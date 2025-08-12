@@ -1,0 +1,8 @@
+[10-Aug-2025 12:36:35 Europe/Berlin] Email could not be sent. Mailer Error: SMTP Error: Could not authenticate.
+[10-Aug-2025 12:36:51 Europe/Berlin] SMTP Debug: Host=smtp.gmail.com, Username=test-email@gmail.com, Port=587
+[10-Aug-2025 12:36:54 Europe/Berlin] Email could not be sent. Mailer Error: SMTP Error: Could not authenticate.
+[10-Aug-2025 12:54:20 Europe/Berlin] Error: [2] mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Users\Shaf\Downloads\Khurram Mahmou\backend\send_email.php on line 76
+[10-Aug-2025 12:55:05 Europe/Berlin] Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server Additional SMTP info: php_network_getaddresses: getaddrinfo for smtp.example.com failed: No such host is known. 
+[10-Aug-2025 12:56:19 Europe/Berlin] Mailer Error: SMTP Error: Could not authenticate.
+[10-Aug-2025 13:56:25 Europe/Berlin] Error: [2] Undefined array key "REQUEST_METHOD" in C:\Users\Shaf\Downloads\Khurram Mahmou\backend\send_email.php on line 28
+[10-Aug-2025 13:56:25 Europe/Berlin] Error: [2] Undefined array key "REQUEST_METHOD" in C:\Users\Shaf\Downloads\Khurram Mahmou\backend\send_email.php on line 95

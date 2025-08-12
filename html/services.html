@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Khurram Hashmi</title>
+    <meta
+      name="description"
+      content="Services by Khurram Hashmi: Resort & hotel development, club management, training, and business consulting."
+    />
+    <meta
+      name="keywords"
+      content="Khurram Hashmi, services, hospitality, resort, club, training, consulting"
+    />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/services.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    </script>
+    <main class="container">
+      <h1>Services</h1>
+      <section class="section-animate">
+        <h2>Resort & Hotel Development</h2>
+        <ul>
+          <li>
+            <strong>Pre-Opening Consultation:</strong> Feasibility studies,
+            operational planning, staff recruitment strategies
+          </li>
+          <li>
+            <strong>Launch Management:</strong> Grand opening coordination,
+            initial operations setup, quality assurance protocols
+          </li>
+          <li>
+            <strong>Ongoing Strategic Support:</strong> Performance
+            optimization, guest experience enhancement, revenue management
+          </li>
+        </ul>
+      </section>
+      <section class="section-animate">
+        <h2>Club Management & Consulting</h2>
+        <ul>
+          <li>
+            <strong>Facility Revitalization:</strong> Gym modernization, tennis
+            court upgrades, swimming facility enhancement
+          </li>
+          <li>
+            <strong>Membership Experience:</strong> Service quality improvement,
+            event programming, member retention strategies
+          </li>
+          <li>
+            <strong>Operational Excellence:</strong> Staff training programs,
+            process optimization, financial performance improvement
+          </li>
+        </ul>
+      </section>
+      <section class="section-animate">
+        <h2>Training & Education Services</h2>
+        <ul>
+          <li>
+            <strong>Corporate Training Programs:</strong> Leadership
+            development, customer service excellence, operational best practices
+          </li>
+          <li>
+            <strong>Academic Partnerships:</strong> COTHM program delivery,
+            curriculum development, industry-academia bridge
+          </li>
+          <li>
+            <strong>Soft Skills Development:</strong> Communication training,
+            team building, service attitude development
+          </li>
+        </ul>
+      </section>
+      <section class="section-animate">
+        <h2>Strategic Business Consulting</h2>
+        <ul>
+          <li>
+            <strong>Business Model Innovation:</strong> Revenue stream
+            diversification, market expansion strategies, competitive
+            positioning
+          </li>
+          <li>
+            <strong>Operational Transformation:</strong> Process reengineering,
+            technology integration, performance measurement
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <div id="footer-placeholder"></div>
+    </footer>
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>

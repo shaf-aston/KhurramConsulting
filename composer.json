@@ -1,0 +1,15 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.10",
+        "league/oauth2-google": "^4.0",
+        "hayageek/oauth2-yahoo": "^2.0",
+        "stevenmaguire/oauth2-microsoft": "^2.2",
+        "greew/oauth2-azure-provider": "^2.0",
+        "sendgrid/sendgrid": "^8.1",
+        "psr/log": "^3.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.6",
+        "phpunit/phpunit": "^11.5"
+    }
+}
