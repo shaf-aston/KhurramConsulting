@@ -14,6 +14,9 @@
     />
     <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
     <link rel="stylesheet" href="../css/style.css?v=1.1" />
+    <!-- Preload critical images -->
+    <link rel="preload" href="../images/Logo.png" as="image" />
+    <link rel="preload" href="../images/Portrait.jpeg" as="image" />
     <!-- Preload header styles to prevent FOUC when injecting header.html -->
     <link rel="preload" href="../css/header.css?v=1.1" as="style" onload="this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="../css/header.css?v=1.1" /></noscript>
@@ -55,6 +58,10 @@
                 src="../images/Logo.png"
                 alt="Khurram Hashmi Logo"
                 class="hero-logo img-animate"
+                width="180"
+                height="240"
+                loading="eager"
+                decoding="async"
               />
             </div>
             <div class="portrait-container">
@@ -62,6 +69,10 @@
                 src="../images/Portrait.jpeg"
                 alt="Khurram Hashmi - Hospitality Consultant"
                 class="hero-portrait img-animate"
+                width="180"
+                height="240"
+                loading="eager"
+                decoding="async"
               />
             </div>
           </div>

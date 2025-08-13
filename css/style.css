@@ -595,6 +595,32 @@ body {
   will-change: transform, opacity;
 }
 
+/* Prevent image flash */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo-container img,
+.portrait-container img {
+  width: clamp(160px, 16vw, 240px);
+  height: clamp(240px, 24vw, 340px);
+  object-fit: cover;
+  border-radius: 12px;
+  transition: all 0.4s var(--ease-function);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  /* Prevent flash */
+  background: var(--gray);
+}
+
+.logo-container img {
+  object-fit: contain;
+}
+
+.portrait-container img {
+  filter: brightness(1.1) contrast(1.05);
+}
+
 .section-animate {
   opacity: 0;
   animation: fadeSlideUp var(--transition-speed) var(--ease-function) forwards;
