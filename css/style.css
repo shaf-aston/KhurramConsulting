@@ -242,6 +242,8 @@ body {
   display: grid;
   justify-items: center;
   margin: 1.5rem 0;
+  position: relative; /* allow decorative ribbons behind image */
+  overflow: visible;
 }
 
 .cothm-image {
@@ -249,6 +251,8 @@ body {
   border-radius: 12px;
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
   transition: transform var(--transition-speed) var(--ease-function);
+  position: relative;
+  z-index: 1; /* above ribbons */
 }
 
 .cothm-image:hover {
@@ -261,6 +265,61 @@ body {
   color: var(--primary);
   opacity: 0.85;
   text-align: center;
+}
+
+/* Decorative golden ribbons behind the image */
+.cothm-image-container::before,
+.cothm-image-container::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  top: 50%;
+  width: min(1200px, 120%);
+  height: 90px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    rgba(191, 161, 74, 0.15) 0%,
+    rgba(255, 215, 0, 0.22) 50%,
+    rgba(191, 161, 74, 0.15) 100%);
+  filter: blur(0.5px);
+  z-index: 0;
+  pointer-events: none;
+  background-size: 200% 100%;
+  animation: ribbonFlow 10s ease-in-out infinite alternate;
+}
+
+.cothm-image-container::before {
+  transform: translate(-50%, -60%) rotate(-10deg);
+}
+
+.cothm-image-container::after {
+  transform: translate(-50%, -40%) rotate(10deg);
+  height: 70px;
+  animation-duration: 12s;
+  opacity: 0.9;
+}
+
+@keyframes ribbonFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Responsive tuning for ribbons */
+@media (max-width: 900px) {
+  .cothm-image-container::before { height: 70px; }
+  .cothm-image-container::after { height: 54px; }
+}
+
+@media (max-width: 600px) {
+  .cothm-image-container::before { height: 56px; transform: translate(-50%, -58%) rotate(-8deg); }
+  .cothm-image-container::after { height: 42px; transform: translate(-50%, -42%) rotate(8deg); }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .cothm-image-container::before,
+  .cothm-image-container::after { animation: none !important; }
 }
 
 /* =====================
@@ -527,6 +586,13 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Ensure images with animation class don't flash at full size before JS initializes */
+.img-animate {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  will-change: transform, opacity;
 }
 
 .section-animate {

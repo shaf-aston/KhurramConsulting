@@ -1,0 +1,60 @@
+/* =====================
+   Root & Base Styles
+   ===================== */
+
+/* KC - Khurram Consultants */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #1a2233;
+  --secondary: #bfa14a;
+  --accent: #fff;
+  --gray: #f5f5f5;
+  --text: #222;
+  --header-font: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --body-font: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --transition-speed: 0.3s;
+  --ease-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --hover-scale: 1.02;
+  --shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  background: var(--gray);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =====================
+   Header Styles
+   ===================== */
+.main-header {
+  background: var(--primary);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--header-font);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
