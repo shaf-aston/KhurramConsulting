@@ -609,8 +609,7 @@ img {
   border-radius: 12px;
   transition: all 0.4s var(--ease-function);
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-  /* Prevent flash */
-  background: var(--gray);
+  background: var(--primary);
 }
 
 .logo-container img {
