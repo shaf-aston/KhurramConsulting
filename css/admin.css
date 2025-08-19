@@ -1,0 +1,160 @@
+/* Admin Panel Styles */
+.admin-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#admin-login {
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #3a5a80;
+}
+
+.admin-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.upload-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-controls {
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background-color: #4a6fa5;
+    color: white;
+    border-color: #4a6fa5;
+}
+
+.admin-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.image-item {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.image-info {
+    padding: 15px;
+}
+
+.image-title {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.image-description {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.image-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.status-published {
+    background-color: #e6f7e6;
+    color: #2e7d32;
+}
+
+.status-draft {
+    background-color: #fff8e1;
+    color: #ff8f00;
+}
+
+.image-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.publish-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+}
+
+.unpublish-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}

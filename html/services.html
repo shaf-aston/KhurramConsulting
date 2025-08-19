@@ -15,6 +15,9 @@
     <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/services.css" />
+    <!-- Preload header styles to prevent FOUC when injecting header.html -->
+    <link rel="preload" href="../css/header.css?v=1.1" as="style" onload="this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="../css/header.css?v=1.1" /></noscript>
   </head>
   <body>
     <div id="header-placeholder"></div>
@@ -23,6 +26,39 @@
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header-placeholder").innerHTML = data;
+          const toggle = document.querySelector('.menu-toggle');
+          const nav = document.getElementById('primary-nav');
+          if (!toggle || !nav) return;
+
+          let backdrop = document.querySelector('.nav-backdrop');
+          if (!backdrop) {
+            backdrop = document.createElement('div');
+            backdrop.className = 'nav-backdrop';
+            document.body.appendChild(backdrop);
+          }
+
+          const openMenu = () => {
+            nav.classList.add('is-open');
+            toggle.classList.add('is-active');
+            toggle.setAttribute('aria-expanded', 'true');
+            backdrop.classList.add('is-visible');
+            document.body.classList.add('no-scroll');
+          };
+          const closeMenu = () => {
+            nav.classList.remove('is-open');
+            toggle.classList.remove('is-active');
+            toggle.setAttribute('aria-expanded', 'false');
+            backdrop.classList.remove('is-visible');
+            document.body.classList.remove('no-scroll');
+          };
+
+          toggle.addEventListener('click', () => {
+            if (nav.classList.contains('is-open')) closeMenu(); else openMenu();
+          });
+          backdrop.addEventListener('click', closeMenu);
+          nav.addEventListener('click', (e) => { if (e.target.tagName === 'A') closeMenu(); });
+          window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('is-open')) closeMenu(); });
+          window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
         });
     </script>
     <main class="container">

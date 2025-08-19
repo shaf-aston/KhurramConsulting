@@ -36,6 +36,7 @@
   padding: 0.5rem 2rem;
   box-sizing: border-box;
   animation: slideInDown 0.8s ease-out;
+  position: relative;
 }
 
 @keyframes slideInDown {
@@ -88,6 +89,45 @@
   text-shadow: 2px 2px 8px rgba(191, 161, 74, 0.3);
 }
 
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-left: auto;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  content: "";
+  position: relative;
+  transition: transform 0.25s var(--ease-function), opacity 0.25s var(--ease-function), background-color 0.25s var(--ease-function);
+}
+
+.menu-icon { top: 0; }
+.menu-icon::before { position: absolute; top: -7px; left: 0; }
+.menu-icon::after { position: absolute; top: 7px; left: 0; }
+
+.menu-toggle.is-active .menu-icon {
+  background: transparent;
+}
+.menu-toggle.is-active .menu-icon::before {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.is-active .menu-icon::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .nav-menu {
   display: flex;
   gap: 2rem;
@@ -96,8 +136,9 @@
 .nav-menu a {
   color: var(--accent);
   text-decoration: none;
+  position: relative;
   transition: color var(--transition-speed);
-
+}
 .nav-menu a::after {
   content: '';
   position: absolute;
@@ -122,6 +163,52 @@
   outline: 2px solid var(--secondary);
   outline-offset: 2px;
 }
+
+@media (max-width: 900px) {
+  .header-flex { padding: 0.5rem 1rem; }
+  .logo-section { gap: 0.5rem; }
+  .logo { font-size: 1.35rem; letter-spacing: 1px; }
+  .logo-portrait { width: 40px; height: 40px; }
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(300px, 85vw);
+    background: var(--primary);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1100;
+    box-shadow: -6px 0 16px rgba(0, 0, 0, 0.25);
+  }
+  .nav-menu.is-open { transform: translateX(0); }
+
+  .nav-menu a {
+    width: 100%;
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .nav-menu a:last-child { border-bottom: 0; }
+
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+}
+
+/* Backdrop for mobile nav */
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1050;
+}
+.nav-backdrop.is-visible { display: block; }
+
+/* Body lock when nav is open */
+body.no-scroll { overflow: hidden; }
 
 .contact-info {
   font-size: 0.95rem;

@@ -34,44 +34,7 @@ body {
   margin: 0 auto;
 }
 
-/* =====================
-   Header Styles
-   ===================== */
-.main-header {
-  background: var(--primary);
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: var(--header-font);
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--secondary);
-}
-
-.nav-menu {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-menu a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color var(--transition-speed);
-}
-
-.nav-menu a:hover {
-  color: var(--secondary);
-}
+/* Header styles are defined in `css/header.css` to avoid conflicts. */
 
 /* =====================
    Hero Section
