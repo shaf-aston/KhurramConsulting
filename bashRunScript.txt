@@ -1,0 +1,9 @@
+# run from any shell
+cd "c:/Users/Shaf/Downloads/Khurram Mahmou" \
+&& command -v php >/dev/null || { echo "ERROR: php not found in PATH"; exit 1; } \
+&& [ -d html ] && [ -d backend ] || { echo "ERROR: missing html/ or backend/ directory"; exit 1; } \
+&& touch backend/contact_submissions.json \
+&& chmod 666 backend/contact_submissions.json 2>/dev/null || true \
+&& echo "Starting PHP server at http://localhost:8000 (Ctrl+C to stop)" \
+&& php -S localhost:8000 -t .
+
